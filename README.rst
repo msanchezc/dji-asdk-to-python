@@ -13,8 +13,8 @@ DJI Android SDK to Python
         :target: https://dji-asdk-to-python.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/cartovarc/dji_asdk_to_python/shield.svg
-     :target: https://pyup.io/repos/github/cartovarc/dji_asdk_to_python/
+.. image:: https://pyup.io/repos/github/PSBPOSAS/dji-asdk-to-python/shield.svg
+     :target: https://pyup.io/repos/github/PSBPOSAS/dji-asdk-to-python/
      :alt: Updates
 
 
