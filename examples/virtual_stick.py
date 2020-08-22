@@ -1,10 +1,10 @@
 import time
 from dji_asdk_to_python.products.aircraft import Aircraft
 from dji_asdk_to_python.flight_controller.virtual_stick.flight_control_data import FlightControlData
-from dji_asdk_to_python.flight_controller.virtual_stick.flight_control_data import VerticalControlMode
+from dji_asdk_to_python.flight_controller.virtual_stick.control_mode import VerticalControlMode
 
 
-APP_IP = "192.168.0.180"
+APP_IP = "YOUR_AIRCRAFT_IP"
 
 drone = Aircraft(APP_IP)
 fc = drone.getFlightController()
@@ -87,8 +87,11 @@ for i in range(2):
 fc.setVerticalControlMode(VerticalControlMode.VELOCITY)
 
 # Using callback does not block execution
+
+
 def printVerticalMode(vertical_mode):
     print("aircraft vertical mode is %s" % vertical_mode)
+
 
 fc.getVerticalControlMode(callback=printVerticalMode)
 fc.setVerticalControlMode(VerticalControlMode.POSITION)
