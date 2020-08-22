@@ -1,5 +1,5 @@
 import time
-from dji_asdk_to_python.products import Aircraft
+from dji_asdk_to_python.products.aircraft import Aircraft
 
 
 APP_IP = "192.168.0.109"

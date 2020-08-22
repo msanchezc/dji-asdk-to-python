@@ -87,7 +87,7 @@ Usage example
 .. code:: python
 
     import time
-    from dji_asdk_to_python.products import Aircraft
+    from dji_asdk_to_python.products.aircraft import Aircraft
     drone = Aircraft("android_device_ip")
     fc = drone.getFlightController()
     fc.startTakeoff()

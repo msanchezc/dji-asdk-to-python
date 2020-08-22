@@ -1,7 +1,7 @@
 import time
-from dji_asdk_to_python.products import Aircraft
-from dji_asdk_to_python.flight_controller.virtual_stick import FlightControlData
-from dji_asdk_to_python.flight_controller.virtual_stick import VerticalControlMode
+from dji_asdk_to_python.products.aircraft import Aircraft
+from dji_asdk_to_python.flight_controller.virtual_stick.flight_control_data import FlightControlData
+from dji_asdk_to_python.flight_controller.virtual_stick.flight_control_data import VerticalControlMode
 
 
 APP_IP = "192.168.0.180"

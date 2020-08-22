@@ -11,7 +11,6 @@ class MessageBuilder:
     SET_VIRTUAL_STICK_CONTROL_MODE_ENABLED = "setVirtualStickModeEnabled"
     GET_VERTICAL_CONTROL_MODE = "getVerticalControlMode"
     SET_VERTICAL_CONTROL_MODE = "setVerticalControlMode"
-    GET_TRIGGERS = "getTriggers"
     LOAD_MISSION = "loadMission"
     GET_LOADED_MISSION = "getLoadedMission"
     UPLOAD_MISSION = "uploadMission"

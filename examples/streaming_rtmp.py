@@ -1,6 +1,6 @@
 import cv2, time
 
-from dji_asdk_to_python.products import Aircraft
+from dji_asdk_to_python.products.aircraft import Aircraft
 from dji_asdk_to_python.errors import CustomError
 
 

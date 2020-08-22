@@ -1,5 +1,5 @@
 from dji_asdk_to_python.mission_control.waypoint.waypoint import LocationCoordinate2D
-from dji_asdk_to_python.products import Aircraft
+from dji_asdk_to_python.products.aircraft import Aircraft
 import time
 
 app_ip = "192.168.0.174"

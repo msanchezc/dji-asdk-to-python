@@ -1,8 +1,8 @@
 import cv2
 from dji_asdk_to_python.precision_landing.aruco_single_tracker import ArucoSingleTracker
-from dji_asdk_to_python.products import Aircraft
+from dji_asdk_to_python.products.aircraft import Aircraft
 from dji_asdk_to_python.errors import CustomError
-from dji_asdk_to_python.flight_controller.virtual_stick import FlightControlData
+from dji_asdk_to_python.flight_controller.virtual_stick.flight_control_data import FlightControlData
 from dji_asdk_to_python.flight_controller.flight_controller_state import FlightControllerState
 from dji_asdk_to_python.precision_landing.PID import PID
 

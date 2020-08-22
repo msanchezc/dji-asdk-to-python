@@ -2,7 +2,7 @@ import time
 from dji_asdk_to_python.mission_control.waypoint import Waypoint
 from dji_asdk_to_python.mission_control.waypoint import WaypointMissionOperator
 from dji_asdk_to_python.mission_control.waypoint import WaypointMission
-from dji_asdk_to_python.products import Aircraft
+from dji_asdk_to_python.products.aircraft import Aircraft
 from dji_asdk_to_python.mission_control.waypoint import (
     WaypointMissionGoToWaypointMode,
     WaypointMissionFinishedAction,

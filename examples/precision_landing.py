@@ -1,4 +1,4 @@
-from dji_asdk_to_python.products import Aircraft
+from dji_asdk_to_python.products.aircraft import Aircraft
 import numpy as np
 from dji_asdk_to_python.precision_landing.aproximation import ArucoAproximation
 from dji_asdk_to_python.precision_landing.landing import ArucoLanding
