@@ -30,24 +30,6 @@ class SocketUtils:
     # fmt: on
 
     @staticmethod
-    def recvall(sock, requested_bytes, timeout):
-        # Helper function to recv n bytes or return None if EOF is hit
-        sock.settimeout(timeout)  # timeout
-        try:
-            data = b""
-            while len(data) < requested_bytes:
-                while True:
-                    packet = sock.recv(requested_bytes - len(data))
-                    if not packet:
-                        pass
-                    else:
-                        data += packet
-                        break
-        except (socket.error, socket.timeout):
-            return None
-        return data
-
-    @staticmethod
     def send(
         message,
         app_ip,
@@ -77,7 +59,7 @@ class SocketUtils:
                 t.start()
             else:
                 t = threading.Thread(
-                    target=SocketUtils.receive_async,
+                    target=SocketUtils.receive,
                     args=[sock, callback, timeout, return_type],
                 )
                 t.start()
@@ -87,27 +69,13 @@ class SocketUtils:
         sock.settimeout(timeout)  # timeout
         server_message = None
         try:
-            second_message_size = SocketUtils.recvall(
-                sock=sock,
-                requested_bytes=SocketUtils.FIRST_MESSAGE_LENGTH,
-                timeout=timeout,
-            )
-            if second_message_size is not None:
-                second_message_size = second_message_size.decode(
-                    "utf-8"
-                )  # 7 bytes used always for bytes message length
-                server_message = SocketUtils.recvall(
-                    sock, int(second_message_size), timeout
-                )
-                if server_message is not None:
-                    server_message = server_message.decode("utf-8")
-                    server_message = json.loads(server_message)
-                else:
-                    server_message = SocketError(
-                        "Socket error, packages lost on data")
+            sock_file = sock.makefile()
+            server_message = sock_file.readline()
+            if server_message is not None:
+                server_message = json.loads(server_message)
             else:
                 server_message = SocketError(
-                    "Socket error, packages lost on header")
+                    "Socket error, packages lost on data")
         except socket.error as e:
             server_message = SocketError("%s" % e)
         except socket.timeout as e:
@@ -173,7 +141,3 @@ class SocketUtils:
             return callback(result)
         else:
             return result
-
-    @staticmethod
-    def receive_async(sock, callback, timeout, return_type):
-        SocketUtils.receive(sock, callback, timeout, return_type)
