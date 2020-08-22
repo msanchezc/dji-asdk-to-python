@@ -1,12 +1,17 @@
 from contextlib import closing
 import socket
 import numpy as np
-import cv2
 import random
 import string
-import gi
-gi.require_version("Gst", "1.0")
-from gi.repository import Gst  # noqa: E402
+
+# https://github.com/PSBPOSAS/dji-asdk-to-python/issues/2
+import os
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+if not on_rtd:
+    import cv2
+    import gi
+    gi.require_version("Gst", "1.0")
+    from gi.repository import Gst  # noqa: E402
 
 
 class StreamingListener(object):
