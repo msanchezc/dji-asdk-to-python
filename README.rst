@@ -6,8 +6,8 @@ DJI Android SDK to Python
 .. image:: https://img.shields.io/pypi/v/dji_asdk_to_python.svg
         :target: https://pypi.python.org/pypi/dji_asdk_to_python
 
-.. image:: https://img.shields.io/travis/cartovarc/dji_asdk_to_python.svg
-        :target: https://travis-ci.com/cartovarc/dji_asdk_to_python
+.. image:: https://img.shields.io/travis/PSBPOSAS/dji-asdk-to-python.svg
+        :target: https://travis-ci.org/PSBPOSAS/dji-asdk-to-python
 
 .. image:: https://readthedocs.org/projects/dji-asdk-to-python/badge/?version=latest
         :target: https://dji-asdk-to-python.readthedocs.io/en/latest/?badge=latest
