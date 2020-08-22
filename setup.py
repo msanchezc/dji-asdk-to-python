@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 
 """The setup script."""
 
@@ -10,8 +11,12 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-with open("requirements.txt", "r") as fh:
-    requirements = fh.readlines()
+requirements = []
+# https://github.com/PSBPOSAS/dji-asdk-to-python/issues/2
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+if not on_rtd:
+    with open("requirements.txt", "r") as fh:
+        requirements = fh.readlines()
 
 setup_requirements = ['pytest-runner', ]
 
