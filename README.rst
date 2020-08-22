@@ -3,8 +3,8 @@ DJI Android SDK to Python
 =========================
 
 
-.. image:: https://img.shields.io/pypi/v/dji_asdk_to_python.svg
-        :target: https://pypi.python.org/pypi/dji_asdk_to_python
+.. image:: https://img.shields.io/pypi/v/dji-asdk-to-python.svg
+        :target: https://pypi.python.org/pypi/dji-asdk-to-python
 
 .. image:: https://img.shields.io/travis/PSBPOSAS/dji-asdk-to-python.svg
         :target: https://travis-ci.org/PSBPOSAS/dji-asdk-to-python
