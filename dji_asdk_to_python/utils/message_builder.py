@@ -80,8 +80,8 @@ class MessageBuilder:
     def build_message(message_method, message_class, message_data):
         return str(
             {
-                "method": "message_method",
-                "class": "message_class",
-                "data": "message_data"
+                "method": message_method,
+                "class": message_class,
+                "data": message_data
             }
         )

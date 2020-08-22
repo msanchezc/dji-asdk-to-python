@@ -1,13 +1,12 @@
 from contextlib import closing
-from gi.repository import Gst
 import socket
 import numpy as np
-import gi
 import cv2
 import random
 import string
-
+import gi
 gi.require_version("Gst", "1.0")
+from gi.repository import Gst  # noqa: E402
 
 
 class StreamingListener(object):
