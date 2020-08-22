@@ -65,11 +65,7 @@ class WaypointUploadProgress:
             - totalWaypointCount (int): The total count of waypoints in the waypoint mission.
             - isSummaryUploaded (bool): The waypoint mission operator has uploaded the the mission's summary (information except waypoints).
         """
-        assert (
-            isinstance(uploadedWaypointIndex, int) and
-            isinstance(totalWaypointCount, int) and
-            isinstance(isSummaryUploaded, bool)
-        )
+        assert isinstance(uploadedWaypointIndex, int) and isinstance(totalWaypointCount, int) and isinstance(isSummaryUploaded, bool)
         self.uploadedWaypointIndex = uploadedWaypointIndex
         self.totalWaypointCount = totalWaypointCount
         self.isSummaryUploaded = isSummaryUploaded
@@ -87,9 +83,7 @@ class WaypointMissionUploadEvent:
             - getPreviousState (function): A function that returns previous state of the operator of type WaypointMissionState.
             - getCurrentState (function): A function that returns current state of the operator of type WaypointMissionState.
         """
-        assert (callable(getProgress) and
-                callable(getPreviousState) and
-                callable(getCurrentState))
+        assert callable(getProgress) and callable(getPreviousState) and callable(getCurrentState)
         self.getProgress = getProgress
         self.getPreviousState = getPreviousState
         self.getCurrentState = getCurrentState
@@ -110,9 +104,11 @@ class WaypointExecutionProgress:
             - totalWaypointCount (int): The total count of waypoints in the waypoint mission.
             - executeState (WaypointMissionExecuteState): Current execution state of the aircraft.
         """
-        assert (
-            isinstance(targetWaypointIndex, int) and isinstance(totalWaypointCount, int) and isinstance(isWaypointReached, bool) and isinstance(executeState, WaypointMissionExecuteState)
-        )
+        assert isinstance(targetWaypointIndex, int)
+        assert isinstance(totalWaypointCount, int)
+        assert isinstance(isWaypointReached, bool)
+        assert isinstance(executeState, WaypointMissionExecuteState)
+
         self.targetWaypointIndex = targetWaypointIndex
         self.totalWaypointCount = totalWaypointCount
         self.isWaypointReached = isWaypointReached
@@ -131,9 +127,10 @@ class WaypointMissionExecutionEvent:
             - getPreviousState (function): A function that returns previous state of the operator of type WaypointMissionState.
             - getCurrentState (function): A function that returns current state of the operator of type WaypointMissionState.
         """
-        assert (callable(getProgress) and
-                callable(getPreviousState) and
-                callable(getCurrentState))
+        assert callable(getProgress)
+        assert callable(getPreviousState)
+        assert callable(getCurrentState)
+
         self.getProgress = getProgress
         self.getPreviousState = getPreviousState
         self.getCurrentState = getCurrentState
@@ -160,11 +157,11 @@ class WaypointMissionOperatorListener:
             - onExecutionUpdate (function): A function with a single parameter of type WaypointMissionExecutionEvent that is called when there is an execution update for the waypoint mission operator.
             - onExecutionFinish (function): A function that is called when the waypoint mission ends.
         """
-        assert (callable(onUploadUpdate) and
-                callable(onDownloadUpdate) and
-                callable(onExecutionStart) and
-                callable(onExecutionUpdate) and
-                callable(onExecutionFinish))
+        assert callable(onUploadUpdate)
+        assert callable(onDownloadUpdate)
+        assert callable(onExecutionStart)
+        assert callable(onExecutionUpdate)
+        assert callable(onExecutionFinish)
 
         self.onUploadUpdate = onUploadUpdate
         self.onDownloadUpdate = onDownloadUpdate
