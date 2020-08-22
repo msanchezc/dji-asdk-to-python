@@ -84,6 +84,8 @@ Uninstall
 Usage example
 -------------
 
+Check examples here https://github.com/PSBPOSAS/dji-asdk-to-python/tree/master/examples
+
 .. code:: python
 
     import time
