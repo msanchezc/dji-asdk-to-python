@@ -48,9 +48,9 @@ class ArucoLanding:
         self.yaw_margin = 15
 
     def start(self):
-        self.rtp_manager.startStream()
         self.rtp_manager.setWidth(1280)
         self.rtp_manager.setHeigth(720)
+        self.rtp_manager.startStream()
         result = self.rtp_manager.startStream()
         print("result startStream %s" % result)
         if isinstance(result, CustomError):

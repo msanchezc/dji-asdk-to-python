@@ -4,7 +4,7 @@ from dji_asdk_to_python.flight_controller.virtual_stick.flight_control_data impo
 from dji_asdk_to_python.flight_controller.virtual_stick.control_mode import VerticalControlMode
 
 
-APP_IP = "YOUR_AIRCRAFT_IP"
+APP_IP = "192.168.0.110"
 
 drone = Aircraft(APP_IP)
 fc = drone.getFlightController()
@@ -16,8 +16,10 @@ fcd = FlightControlData(pitch=0, roll=0, yaw=0, vertical_throttle=1)
 fc.startTakeoff()
 time.sleep(7)  # waits until takeoff completes
 
+
+
 # Throttle test
-for i in range(2):
+""" for i in range(2):
     fcd.setVerticalThrottle(fcd.getVerticalThrottle() * -1)
     print(fcd)
     time.sleep(1)
@@ -31,7 +33,7 @@ for i in range(2):
     for i in range(10):
         fc.sendVirtualStickFlightControlData(fcd)
         time.sleep(0.1)
-    time.sleep(2)
+    time.sleep(2) """
 
 # Yaw test
 fcd.setVerticalThrottle(0)
@@ -108,7 +110,7 @@ for i in range(3):
         fc.sendVirtualStickFlightControlData(fcd)
         time.sleep(0.1)
     time.sleep(3)
-    fcd.setVerticalThrottle(15)
+    fcd.setVerticalThrottle(6)
     print(fcd)
     for i in range(10):
         fc.sendVirtualStickFlightControlData(fcd)

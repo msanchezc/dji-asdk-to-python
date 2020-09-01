@@ -4,7 +4,7 @@ from dji_asdk_to_python.flight_controller.flight_controller_state import (
 )
 
 
-APP_IP = "192.168.0.109"
+APP_IP = "192.168.0.110"
 
 drone = Aircraft(APP_IP)
 fc = drone.getFlightController()
